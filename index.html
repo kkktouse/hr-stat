@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruitment Performance Report – 13 August 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .report-container {
+            max-width: 900px;
+            margin: auto;
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+        h1, h2, h3 {
+            font-weight: 600;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8fafc;
+        }
+        .insight-card {
+            background-color: #f1f5f9;
+            border-left: 4px solid #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="report-container p-4 sm:p-8">
+        <header class="mb-8 pb-4 border-b">
+            <h1 class="text-3xl font-bold text-gray-900">Recruitment Performance Report</h1>
+            <p class="text-md text-gray-500">Period: 1 June 2025 – 13 August 2025</p>
+        </header>
+
+        <section id="executive-summary" class="mb-10">
+            <h2 class="text-2xl mb-4">Executive Summary</h2>
+            <p class="text-base leading-relaxed">
+                This report summarizes the recruitment activities from June 1 to August 13, 2025. During this period, the team processed nearly <strong>1,200 candidates</strong> and conducted <strong>412 video screenings</strong>, resulting in <strong>44 hires</strong>. A significant challenge identified is the high early-stage attrition, with <strong>43%</strong> of new hires leaving the company, primarily within the first week and concentrated in the Lead Generation and Design departments. July recorded the highest attrition rate. Despite the high workload and turnover, the recruitment team has demonstrated substantial productivity, and there have been successful internal role transfers, indicating potential for internal mobility programs.
+            </p>
+        </section>
+
+        <hr class="my-10">
+
+        <section id="overall-statistics" class="mb-10">
+            <h2 class="text-2xl mb-4">1. Overall Recruitment Funnel</h2>
+            <p class="text-gray-600 mb-6">The following table and chart illustrate the overall candidate flow from initial contact to active employment for the reporting period.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Recruitment Funnel Data</h3>
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="font-semibold">Metric</th>
+                                    <th class="font-semibold">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Total Candidates Processed</td><td>1,194</td></tr>
+                                <tr><td>Total Videos Recorded</td><td>412</td></tr>
+                                <tr><td>Denied (Video/Interview)</td><td>85</td></tr>
+                                <tr><td>Offers Extended (Approved)</td><td>44</td></tr>
+                                <tr><td>No-Shows After Offer</td><td>2</td></tr>
+                                <tr><td>Total Hires (Joined)</td><td>42</td></tr>
+                                <tr><td>Left or Terminated</td><td>18</td></tr>
+                                <tr><td><strong>Currently Active Hires</strong></td><td><strong>24</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="recruitmentFunnelChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-10">
+
+        <section id="recruiter-performance" class="mb-10">
+            <h2 class="text-2xl mb-4">2. Recruiter Performance by Month</h2>
+            <p class="text-gray-600 mb-6">This section details the monthly activity for each recruiter, tracking the number of candidates processed and profile updates made.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                 <div class="chart-container">
+                    <canvas id="recruiterActivityChart"></canvas>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Monthly Recruiter Activity</h3>
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="font-semibold">Month</th>
+                                    <th class="font-semibold">Recruiter</th>
+                                    <th class="font-semibold">Candidates</th>
+                                    <th class="font-semibold">Updates</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2"><strong>June 2025</strong></td>
+                                    <td>Nealova Yevheniia</td>
+                                    <td>263</td>
+                                    <td>173</td>
+                                </tr>
+                                <tr>
+                                    <td>Rekonvald Viktoriia</td>
+                                    <td>306</td>
+                                    <td>197</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td colspan="2"><strong>June Total</strong></td>
+                                    <td><strong>569</strong></td>
+                                    <td><strong>370</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"><strong>July 2025</strong></td>
+                                    <td>Nealova Yevheniia</td>
+                                    <td>204</td>
+                                    <td>282</td>
+                                </tr>
+                                <tr>
+                                    <td>Rekonvald Viktoriia</td>
+                                    <td>212</td>
+                                    <td>248</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td colspan="2"><strong>July Total</strong></td>
+                                    <td><strong>416</strong></td>
+                                    <td><strong>530</strong></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3"><strong>August 2025</strong></td>
+                                    <td>Nealova Yevheniia</td>
+                                    <td>74</td>
+                                    <td>104</td>
+                                </tr>
+                                <tr>
+                                    <td>Rekonvald Viktoriia</td>
+                                    <td>104</td>
+                                    <td>103</td>
+                                </tr>
+                                 <tr>
+                                    <td>Morozova Elvira*</td>
+                                    <td>31</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td colspan="2"><strong>August Total</strong></td>
+                                    <td><strong>209</strong></td>
+                                    <td><strong>214</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="text-sm text-gray-500 mt-2">*Started on 08 August 2025.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-10">
+
+        <section id="key-insights" class="mb-10">
+            <h2 class="text-2xl mb-4">3. Key Insights and Trends</h2>
+            <div class="space-y-4">
+                <div class="insight-card p-4 rounded-r-lg">
+                    <h3 class="font-semibold text-lg mb-2">High Early-Stage Turnover</h3>
+                    <p>A total of <strong>18 hires left or were terminated</strong> during the period, representing an attrition rate of <strong>43%</strong> of all joined hires (18 out of 42). This turnover is particularly high within the first week of employment. The <strong>Lead Generation</strong> and <strong>UI/UX Design</strong> departments are most affected by this trend.</p>
+                </div>
+                <div class="insight-card p-4 rounded-r-lg">
+                    <h3 class="font-semibold text-lg mb-2">Peak Attrition in July</h3>
+                    <p><strong>July</strong> saw the highest number of departures, accounting for <strong>10 of the 18 total exits</strong> (56%). This concentration suggests a potential need to review the onboarding process or role expectations for cohorts hired during this month.</p>
+                </div>
+                <div class="insight-card p-4 rounded-r-lg">
+                    <h3 class="font-semibold text-lg mb-2">Intensive Recruitment Workload</h3>
+                    <p>The team managed a substantial pipeline, processing <strong>1,194 candidates</strong> and conducting <strong>412 video screenings</strong> in just over two months. This high volume underscores the significant effort required to achieve hiring targets.</p>
+                </div>
+                 <div class="insight-card p-4 rounded-r-lg">
+                    <h3 class="font-semibold text-lg mb-2">Successful Internal Mobility</h3>
+                    <p>The successful transition of Elvira Morozova from a LeadGen role to a Recruiter position highlights a positive trend. This demonstrates an opportunity for developing internal talent and creating career progression paths within the company, which could also help improve retention.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Chart for Recruitment Funnel
+        const funnelCtx = document.getElementById('recruitmentFunnelChart').getContext('2d');
+        new Chart(funnelCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Candidates Processed', 'Videos Recorded', 'Offers Extended', 'Joined', 'Currently Active'],
+                datasets: [{
+                    label: 'Number of Candidates',
+                    data: [1194, 412, 44, 42, 24],
+                    backgroundColor: [
+                        'rgba(59, 130, 246, 0.7)',
+                        'rgba(34, 197, 94, 0.7)',
+                        'rgba(249, 115, 22, 0.7)',
+                        'rgba(239, 68, 68, 0.7)',
+                        'rgba(168, 85, 247, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(34, 197, 94, 1)',
+                        'rgba(249, 115, 22, 1)',
+                        'rgba(239, 68, 68, 1)',
+                        'rgba(168, 85, 247, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Recruitment Funnel (June - August 2025)',
+                        font: {
+                            size: 16
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        type: 'logarithmic',
+                         ticks: {
+                            callback: function(value, index, values) {
+                                if (value === 1000 || value === 100 || value === 10 || value === 1)
+                                return value;
+                            }
+                         }
+                    }
+                }
+            }
+        });
+
+        // Chart for Recruiter Activity
+        const activityCtx = document.getElementById('recruiterActivityChart').getContext('2d');
+        new Chart(activityCtx, {
+            type: 'bar',
+            data: {
+                labels: ['June', 'July', 'August'],
+                datasets: [
+                    {
+                        label: 'Candidates (Nealova Y.)',
+                        data: [263, 204, 74],
+                        backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Candidates (Rekonvald V.)',
+                        data: [306, 212, 104],
+                        backgroundColor: 'rgba(34, 197, 94, 0.7)',
+                        borderColor: 'rgba(34, 197, 94, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Candidates (Morozova E.)',
+                        data: [0, 0, 31],
+                        backgroundColor: 'rgba(249, 115, 22, 0.7)',
+                        borderColor: 'rgba(249, 115, 22, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Monthly Candidates Processed per Recruiter',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
+                    }
+                },
+                scales: {
+                    x: {
+                        stacked: true,
+                    },
+                    y: {
+                        stacked: true,
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
